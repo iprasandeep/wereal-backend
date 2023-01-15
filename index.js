@@ -8,6 +8,7 @@ const morgan = require('morgan')
 
 const userRoute = require('./routes/users.js')
 const authRoute = require('./routes/auth.js')
+const postsRoute = require('./routes/posts.js')
 dotenv.config();
 
 // mongo db connection
@@ -26,6 +27,7 @@ app.use(morgan('common'));
  
 app.use('/api/users', userRoute)
 app.use('/api/auth', authRoute)
+app.use('/api/posts', postsRoute)
 
 app.get('/', (req, res) =>{
     res.send('welcom to homepage!')
